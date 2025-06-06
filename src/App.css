@@ -74,7 +74,8 @@ body {
   line-height: 1.6;
   margin-top: 1rem;
   padding: 0 1rem;
-  text-align: center;
+ text-align: center;
+
 }
 
 .home-image img {
@@ -96,18 +97,21 @@ body {
 .about-section {
   padding: 1rem;
   background-color: #f0f0f0;
+
   
 }
 
 .section-title {
   text-align: center;
   margin-bottom: 1rem;
+ 
 }
 
 .container p {
   max-width: 700px;
   margin: auto;
-  text-align: center;
+
+ 
 }
 
 
@@ -210,7 +214,7 @@ body {
 .service-icon {
   font-size: 2rem;
   margin-bottom: 0.5rem;
-  color: #00bcd4;
+ color: #00bcd4;
 }
 
 
@@ -304,4 +308,7 @@ body {
   .circle-skill {
     width: 100%;
   }
+}
+.text{
+  text-align: justify;
 }

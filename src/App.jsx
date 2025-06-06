@@ -111,7 +111,8 @@ function App(){
           <h4>I Am Front-End Developer</h4>
           
           <p>
-  I am passionate about creating engaging and user-friendly interfaces. With a strong foundation in HTML, CSS, and JavaScript, I bring ideas to life on the web.
+  I am passionate about creating engaging and user-friendly interfaces. <br />
+   With a strong foundation in HTML, CSS, and JavaScript, <br />I bring ideas to life on the web.
 </p>
 
         </div>
@@ -124,8 +125,12 @@ function App(){
    <section id="about" className="about-section">
       <div className="container">
         <h2 className="section-title">About Me</h2>
-        <p>
-          I'm a front-end developer passionate about crafting responsive, user-friendly web interfaces. With a strong foundation in HTML, CSS, and JavaScript, I specialize in building dynamic applications using frameworks like React and Vue.js. My focus is on delivering seamless user experiences through clean, maintainable code and modern design principles.
+        <p className="text">
+          I'm a front-end developer passionate about crafting responsive,
+           user-friendly web interfaces. With a strong foundation in HTML, CSS, 
+           and JavaScript, I specialize in building dynamic applications using frameworks 
+           like React and Vue.js. My focus is on delivering seamless user experiences through clean, 
+           maintainable code and modern design principles.
         </p>
     
         
