@@ -4,6 +4,8 @@ import './App.css';
 import { FaFacebook, FaInstagram, FaLinkedin, FaTelegramPlane } from 'react-icons/fa';
 import  { useState } from 'react';
 
+import { FaCode,FaPaintBrush, FaLaptopCode, FaTabletAlt, FaPalette } from "react-icons/fa";
+
 import myPhoto from './assets/IMG_20220405_040606_3~2.jpg';
 import { FaHtml5, FaCss3Alt, FaReact, FaPython, FaTools } from 'react-icons/fa';
 import { motion } from 'framer-motion';
@@ -27,6 +29,49 @@ function App(){
     { name: 'Teamwork', level: 85 },
     { name: 'Problem Solving', level: 88 },
   ];
+
+  const services = [
+    {
+      icon: <FaCode />,
+      title: "Web Development",
+      description: "Building responsive websites using modern frameworks like React.",
+    },
+    
+    {
+      icon: <FaPaintBrush />,
+      title: "UI/UX Design",
+      description: "Designing clean, user-friendly interfaces for the best user experience.",
+    },
+    {
+      icon: <FaLaptopCode />,
+      title: "Web Design",
+      description: "Creating modern and visually appealing web layouts using HTML/CSS & Figma.",
+    },
+    {
+      icon: <FaTabletAlt />,
+      title: "Responsive Design",
+      description: "Ensuring websites work seamlessly on all devices, including mobile and tablets.",
+    },
+    {
+      icon: <FaPalette />,
+      title: "Graphic Design",
+      description: "Designing logos, banners, and visuals that align with your brand identity.",
+    },
+  ];
+  const experiences = [
+    {
+      role: "Front-End Developer",
+      
+      period: "2024 - Present",
+      description: "Built websites and web apps for clients using React, HTML, CSS, and JavaScript.",
+    },
+    {
+      role: "Front-End Developer (Intern)",
+      period: "2021 - 2022",
+      description: "Assisted in building and styling front-end components using HTML, CSS, and JavaScript. Gained experience in responsive design, version control (Git), and collaborating with design teams to implement user-friendly UIs.",
+    }
+    
+  ];
     return(
       
         <div className="portfolio">
@@ -38,18 +83,21 @@ function App(){
           <a href="#home">Home</a>
           <a href="#about">About</a>
           <a href="#skills">Skills</a>
+          <a href="#experience">Experience</a>
           <a href="#services">Services</a>
+        
           <a href="#contact">Contact</a>
         </div>
         <div className="menu-icon" onClick={toggleMenu}>
           <div className="bar"></div>
           <div className="bar"></div>
           <div className="bar"></div>
+
         </div>
       </nav>
 
      
-    <section className="home-section">
+    <section id="home" className="home-section">
       <div className="home-container">
         <div className="home-text">
         <div className="home-image">
@@ -63,9 +111,9 @@ function App(){
           <h4>I Am Front-End Developer</h4>
           
           <p>
-            I am passionate about creating engaging and<br /> user-friendly interfaces. With a strong foundation<br /> in HTML, CSS, and JavaScript, I bring ideas to life<br /> on the web.
-          </p>
-          <button className="about-btn">About Me</button>
+  I am passionate about creating engaging and user-friendly interfaces. With a strong foundation in HTML, CSS, and JavaScript, I bring ideas to life on the web.
+</p>
+
         </div>
         
       </div>
@@ -86,14 +134,14 @@ function App(){
     </section>
 
   
-    
+    <section id="skills" className="skills-section">
     <div className="skills-section">
-      <h1 className="skills-title">
-        My <span>Skills</span>
-      </h1>
+      <h2 className="skills-title">
+        My Skills
+      </h2>
 
       <div className="skills-container">
-        {/* Technical Skills Section */}
+        
         <motion.div
           className="technical-skills"
           initial={{ opacity: 0, x: -50 }}
@@ -117,7 +165,7 @@ function App(){
           ))}
         </motion.div>
 
-        {/* Professional Skills Section */}
+        
         <motion.div
           className="professional-skills"
           initial={{ opacity: 0, x: 50 }}
@@ -140,33 +188,36 @@ function App(){
         </motion.div>
       </div>
     </div>
-    
+    </section>
+    <section id="experience" className="experience-section">
+      <h2 className="section-title">Experience</h2>
+      <div className="experience-list">
+        {experiences.map((exp, index) => (
+          <div className="experience-card" key={index}>
+            <h3>{exp.role} - <span>{exp.company}</span></h3>
+            <p className="experience-period">{exp.period}</p>
+            <p className="experience-desc">{exp.description}</p>
+          </div>
+        ))}
+      </div>
+    </section>
         
-
-                
+    <section id="services" className="services-section">
+      <h2 className="section-title">My Services</h2>
+      <div className="services-grid">
+        {services.map((service, index) => (
+          <div className="service-card" key={index}>
+            <div className="service-icon">{service.icon}</div>
+            <h3 className="service-title">{service.title}</h3>
+            <p className="service-desc">{service.description}</p>
+          </div>
+        ))}
+      </div>
+    </section>
                 
               
       
-<section id="services" className="services-section">
-<h2>SERVICES</h2>
-<div className="service-grid">
-  <div className="service-card">
-  
-    <h3>Web Design</h3>
-    <p>creating visually stunning, user-friendly websites.</p>
-    
-  </div>
-  <div className="service-card">
-    <h3>Responsive Design</h3>
-    <p>designing and developing website that adapt flawlessly to phone, tablet and desktop.</p>
-  </div>
-  <div className="service-card">
-    <h3>Graphic Design</h3>
-    <p>Creating a standout graphic design portfolio require a mix of creativity and clarity.</p>
-  </div>
-  
-</div>
-</section>
+
 <section id="contact" className="contact-sectoin">
 
   <div className="contact-content">

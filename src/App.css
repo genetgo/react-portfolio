@@ -1,26 +1,26 @@
-/* Global Styles */
-body, html {
-  margin: 0;
-  padding: 0;
-  font-family: 'Segoe UI', sans-serif;
+
+html {
   scroll-behavior: smooth;
-  background-color: #fff;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
   color: #333;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
+.portfolio {
+  width: 100%;
+  overflow-x: hidden;
 }
-
-/* Navbar */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 1rem 2rem;
   background: #222;
   color: white;
-  padding: 15px 30px;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -28,21 +28,23 @@ a {
 
 .nav-links {
   display: flex;
-  gap: 20px;
+  gap: 1rem;
 }
 
 .nav-links a {
+  text-decoration: none;
   color: white;
-  font-weight: 500;
-  transition: color 0.3s ease;
+  transition: color 0.3s;
 }
 
 .nav-links a:hover {
-  color: #007bff;
+  color: #00bcd4;
 }
 
 .menu-icon {
   display: none;
+  flex-direction: column;
+  gap: 4px;
   cursor: pointer;
 }
 
@@ -50,325 +52,256 @@ a {
   width: 25px;
   height: 3px;
   background: white;
-  margin: 5px 0;
-  transition: 0.4s;
 }
 
-/* Responsive Navbar */
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    background: #222;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    width: 200px;
-    padding: 20px;
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-
-  .menu-icon {
-    display: block;
-  }
+.nav-links.active {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background: #333;
+  padding: 1rem;
+  border-radius: 5px;
 }
 
-/* Home Section */
+
 .home-section {
-  padding: 80px 20px;
-  background: #f9f9f9;
+  
+  background: #f0f0f0;
+  
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-top: 1rem;
+  padding: 0 1rem;
   text-align: center;
 }
 
-.home-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 .home-image img {
-  width: 220px;
-  height: 220px;
-  object-fit: cover;
+  width: 150px;
   border-radius: 30%;
-  margin-bottom: 20px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  margin-bottom: 1rem;
 }
 
 .home-text h4 {
-  font-size: 1.8rem;
-  margin: 10px 0;
+  margin: 0.5rem 0;
 }
 
-.home-text h4 span {
+.home-text span {
   color: black;
   font-weight: bold;
 }
 
-.home-text p {
-  font-size: 1.1rem;
-  margin: 15px 0;
-  line-height: 1.6;
-}
 
-.about-btn {
-  padding: 10px 25px;
-  background: #007bff;
-  border: none;
-  color: white;
-  font-size: 1rem;
-  border-radius: 6px;
-  cursor: pointer;
-  margin-top: 10px;
-}
-
-.about-btn:hover {
-  background-color: #0056b3;
-}
-
-/* About Section */
 .about-section {
-  padding: 60px 20px;
-  background-color: #ffffff;
-  text-align: center;
+  padding: 1rem;
+  background-color: #f0f0f0;
+  
 }
 
 .section-title {
-  font-size: 2.2rem;
-  color: #222;
-  margin-bottom: 20px;
+  text-align: center;
+  margin-bottom: 1rem;
 }
 
-.about-section p {
-  max-width: 800px;
+.container p {
+  max-width: 700px;
   margin: auto;
-  font-size: 1.1rem;
-  line-height: 1.7;
-  color: #555;
-}
-
-/* Skills Section */
-.skills-section {
-  padding: 60px 20px;
-  background-color: #f4f4f4;
   text-align: center;
 }
 
-.skills-title {
-  font-size: 2rem;
-  margin-bottom: 40px;
-}
 
-.skills-title span {
-  color: black;
+.skills-section {
+  background: #f0f0f0;
+  padding: 2rem;
+  text-align: center;
 }
 
 .skills-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
-  gap: 40px;
-}
-
-.technical-skills, .professional-skills {
-  flex: 1;
-  min-width: 280px;
-  max-width: 400px;
-  text-align: left;
-}
-
-.bar-group {
-  margin-bottom: 20px;
+  gap: 2rem;
+  justify-content: center;
 }
 
 .bar-group label {
-  display: block;
-  font-weight: 600;
-  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.3rem;
 }
 
 .bar {
   background: #ddd;
+  width: 100%;
   height: 10px;
-  border-radius: 10px;
+  border-radius: 5px;
   overflow: hidden;
 }
 
 .fill {
-  background: #007bff;
+  background: #00bcd4;
   height: 100%;
-  transition: width 1s ease;
+  transition: width 0.5s ease-in-out;
+  width: var(--fill-width);
 }
 
-/* Circle Skill */
 .circle-skill {
-  text-align: center;
-  margin-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .circle {
-  width: 100px;
-  height: 100px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
-  background: conic-gradient(#007bff calc(var(--percentage) * 1%), #ddd 0%);
+  background: conic-gradient(#00bcd4 calc(var(--percentage) * 1%), #eee 0);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: auto;
-  font-weight: bold;
-  font-size: 1rem;
+  margin-bottom: 0.5rem;
 }
 
-.circle span {
-  color: #222;
+
+.experience-section {
+  padding: 2rem;
+  background-color: #f0f0f0;
 }
 
-.circle-skill p {
-  margin-top: 10px;
-  font-weight: 500;
-}
-
-/* Services Section */
-.services-section {
-  padding: 60px 20px;
-  background: #fff;
-  text-align: center;
-}
-
-.services-section h2 {
-  font-size: 2rem;
-  margin-bottom: 40px;
-}
-
-.service-grid {
+.experience-list {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 25px;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.experience-card {
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background: #f0f0f0;
+}
+
+.experience-period {
+  color: #555;
+  font-size: 0.9rem;
+}
+
+
+.services-section {
+  background: #f0f0f0;
+  padding: 2rem;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
 }
 
 .service-card {
-  background-color: #f9f9f9;
-  padding: 25px;
+  background: #f0f0f0;
+  padding: 1rem;
   border-radius: 10px;
-  width: 280px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.service-card h3 {
-  color: #007bff;
-  margin-bottom: 10px;
-}
-
-.service-card p {
-  color: #555;
-  font-size: 1rem;
-}
-
-/* Contact Section */
-.contact-sectoin {
-  padding: 60px 20px;
-  background-color: #f4f4f4;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
   text-align: center;
 }
 
-.contact-info h2 {
+.service-icon {
   font-size: 2rem;
-  margin-bottom: 20px;
+  margin-bottom: 0.5rem;
+  color: #00bcd4;
 }
 
-.contact-info p {
-  font-size: 1rem;
-  color: #444;
-  margin: 4px 0;
+
+.contact-sectoin {
+  background: #f0f0f0;
+  padding: 2rem;
+  text-align: center;
 }
 
 .contact-form {
-  max-width: 500px;
-  margin: 30px auto 0;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 0.5rem;
+  max-width: 400px;
+  margin: auto;
 }
 
 .contact-form input,
 .contact-form textarea {
-  padding: 12px;
+  padding: 0.7rem;
   border: 1px solid #ccc;
-  font-size: 1rem;
-  border-radius: 6px;
-  resize: vertical;
+  border-radius: 5px;
 }
 
-.contact-form .btn {
-  background-color: #007bff;
+.btn {
+  background: #00bcd4;
   color: white;
-  padding: 12px;
+  padding: 0.8rem;
   border: none;
-  border-radius: 30px;
-  cursor: pointer;
+  margin-left: 100px;
+  border-radius: 20px;
   width: 50%;
+  cursor: pointer;
 }
 
-.contact-form .btn:hover {
-  background-color: #0056b3;
+.btn:hover {
+  background: orangered;
 }
 
-/* Footer */
+
 .footer {
-  
+  padding: 1rem;
+  background:#f0f0f0;
   color: black;
-  padding: 20px 0;
   text-align: center;
-  font-size: 0.95rem;
+  margin-top: 2rem;
+  
 }
 
-/* Social Icons */
+
 .social-icons {
   display: flex;
   justify-content: center;
-  padding: 20px 0;
-  gap: 20px;
+  cursor: pointer;
+  gap: 1rem;
+  margin: 1rem 0;
+  transition: all 0.3s ease-in-out;
+  z-index: 1000;
+}
+.service-icons:hover {
+  transform: translateX(0);
+  background-color: orangered;
 }
 
-.social-icons a {
-  transition: transform 0.3s ease;
-}
 
-.social-icons a:hover {
-  transform: scale(1.2);
-}
+@media (max-width: 480px) {
+  .nav-links {
+    display: none;
+  }
 
-/* Responsive Layout */
-@media (max-width: 768px) {
-  .skills-container {
+  .menu-icon {
+    display: flex;
+  }
+
+  .skills-container,
+  .services-grid,
+  .experience-list {
     flex-direction: column;
-    align-items: center;
   }
 
-  .service-grid {
-    flex-direction: column;
-    align-items: center;
+  .home-image img {
+    width: 120px;
   }
 
-  .home-text h4 {
-    font-size: 1.5rem;
+  .contact-form {
+    width: 90%;
   }
 
-  .home-text p {
-    font-size: 1rem;
-  }
-
-  .circle {
-    width: 80px;
-    height: 80px;
-    font-size: 0.9rem;
-  }
-
-  .contact-info h2 {
-    font-size: 1.5rem;
+  .bar-group label,
+  .bar,
+  .circle-skill {
+    width: 100%;
   }
 }
